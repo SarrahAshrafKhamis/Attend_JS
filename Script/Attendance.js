@@ -21,7 +21,7 @@ $(function () {
             let nowH = time.getHours();
             let nowM = time.getMinutes();
             let attend;
-            if (nowH > outH || (nowH==outH && nowM > outM)) {
+            if (nowH > outH || (nowH == outH && nowM > outM)) {
                 alert("Work day has ended!")
             }
             else {
