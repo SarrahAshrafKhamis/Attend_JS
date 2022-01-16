@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Home</title>
+  <link rel="stylesheet" href="Style/basic.css" />
+  <link rel="stylesheet" href="Style/landing.css" />
+  <link rel="stylesheet" media="(max-width:450px)" href="Style/landingMaxWidth.css" />
+  <link rel="stylesheet" href="Style/regForm.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="Script/landing.js"></script>
+  <script src="Script/welcome.js" type="module"></script>
+  <script src="Script/empDaily.js" type="module"></script>
+  <script src="Script/empMonthly.js" type="module"></script>
+  <script src="Script/empData.js" type="module"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Attend.</h1>
+    <p>Here you can track your attendance!</p>
+  </header>
+  <div id="mainwrapper">
+    <div class="htab">
+      <button class="htablinks" id="htdefaultOpen">Daily Report</button>
+      <button class="htablinks" id="registertab">Monthly Report</button>
+      <button class="htablinks security" id="logintab">Attendance</button>
+      <button class="htablinks">Personal Data</button>
+    </div>
+
+    <div id="DailyReport" class="htabcontent">
+      <div class="tablewrapper">
+        <table class="sml" id="empdaily">
+          <tr>
+            <th>Date:</th>
+            <td id="ddate">1</td>
+          </tr>
+          <tr>
+            <th>Status:</th>
+            <td id="dstatus">2</td>
+          </tr>
+          <tr class="dop opin">
+            <th>Signin:</th>
+            <td id="dsignin">00:00</td>
+          </tr>
+          <tr class="dop opin">
+            <th>Late Signin:</th>
+            <td id="dlatesignin">0</td>
+          </tr>
+          <tr class="dop opin">
+            <th>Excuse Signin:</th>
+            <td id="dexcusesiginin">0</td>
+          </tr>
+          <tr class="dop opout">
+            <th>Signout:</th>
+            <td id="dsignout">00:00</td>
+          </tr>
+          <tr class="dop opout">
+            <th>Early Signout:</th>
+            <td id="dearlysignout">0</td>
+          </tr>
+          <tr class="dop opout">
+            <th>Excuse Signout:</th>
+            <td id="dexcusesignout">0</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div id="MonthlyReport" class="htabcontent">
+      <div class="tablewrapper">
+        <table id="monthtbl">
+          <tr>
+            <th>Date:</th>
+            <th>Status:</th>
+            <th>Signin:</th>
+            <th>Late Signin:</th>
+            <th>Excuse Signin:</th>
+            <th>Signout:</th>
+            <th>Early Signout:</th>
+            <th>Excuse Signout:</th>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div id="Attendance" class="htabcontent center security">
+    </div>
+
+    <div id="PersonalData" class="htabcontent">
+      <div class="tablewrapper">
+        <table class="sml" id="empinfo">
+          <tr>
+            <th>First Name:</th>
+            <td id="fname"></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <span id="fnameerror">Enter valid first name</span>
+            </td>
+          </tr>
+          <tr>
+            <th>Last Name:</th>
+            <td id="lname"></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <span id="lnameerror">Enter valid last name</span>
+            </td>
+          </tr>
+          <tr>
+            <th>Age:</th>
+            <td id="age"></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <span id="ageerror">Enter valid age</span>
+            </td>
+          </tr>
+          <tr>
+            <th>Address:</th>
+            <td id="address"></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <span id="addresserror">Enter valid address</span>
+            </td>
+          </tr>
+          <tr>
+            <th>Email:</th>
+            <td id="email"></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <span id="emailerror">Enter valid email</span>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button id="editbtn">Edit</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <h3>©<i>Attend.</i> 2022</h3>
+  </footer>
+</body>
+
+</html>

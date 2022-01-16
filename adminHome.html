@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+    <link rel="stylesheet" href="Style/basic.css" />
+    <link rel="stylesheet" href="Style/landing.css" />
+    <link rel="stylesheet" media="(max-width:450px)" href="Style/landingMaxWidth.css" />
+    <link rel="stylesheet" href="Style/regForm.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="Script/landing.js"></script>
+    <script src="Script/adminSettings.js"></script>
+    <script src="Script/AdminRegRequests.js" type="module"></script>
+    <script src="Script/adminAllEmps.js" type="module"></script>
+    <script src="Script/adminDaily.js" type="module"></script>
+    <script src="Script/adminMonthly.js" type="module"></script>
+    <script src="Script/adminBrief.js" type="module"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Attend.</h1>
+        <p>Welcome again, Admin!</p>
+    </header>
+    <div id="mainwrapper">
+        <div class="htab">
+            <button class="htablinks" id="htdefaultOpen">Registration Requests</button>
+            <button class="htablinks" id="reports">Reports</button>
+            <button class="htablinks" id="registertab">Register Security</button>
+            <button class="htablinks">Settings</button>
+        </div>
+
+        <div id="RegistrationRequests" class="htabcontent">
+            <div class="tablewrapper smalltbl">
+                <table id="regreqs" class="sml">
+                    <tr>
+                        <th>Emp. ID</th>
+                        <th>Emp. Name</th>
+                        <th style="text-align: center;">Confirm</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div id="Reports" class="htabcontent">
+            <div id="vtwrapper">
+                <div class="vtab">
+                    <div id="notdrop">
+                        <button class="vtablinks" id="vtdefaultOpen">All Employees</button>
+                        <button class="vtablinks">Daily Report</button>
+                        <button class="vtablinks">Monthly Report</button>
+                        <button class="vtablinks">Late Report</button>
+                        <button class="vtablinks">Excuse Report</button>
+                        <button class="vtablinks">Employee Brief</button>
+                    </div>
+                    <div class="dropdown">
+                        <button id="mainbtn" class="dropbtn">All Employees</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button class="vtablinks" id="vtdefaultOpen">All Employees</button>
+                            <button class="vtablinks">Daily Report</button>
+                            <button class="vtablinks">Monthly Report</button>
+                            <button class="vtablinks">Late Report</button>
+                            <button class="vtablinks">Excuse Report</button>
+                            <button class="vtablinks">Employee Brief</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="AllEmployees" class="vtabcontent">
+                    <div class="tablewrapper">
+                        <table id="allemp">
+                            <tr>
+                                <th>Username</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Address</th>
+                                <th>Email</th>
+                                <th>Age</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="DailyReport" class="vtabcontent">
+                    <div class="tablewrapper">
+                        <table id="daytbl">
+                            <tr>
+                                <th>Username</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Status</th>
+                                <th>Signin</th>
+                                <th>Late Signin</th>
+                                <th>Excuse Signin</th>
+                                <th>Signout</th>
+                                <th>Early Signout</th>
+                                <th>Excuse Signout</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="MonthlyReport" class="vtabcontent">
+                    <div class="tablewrapper">
+                        <table id="monthtbl">
+                            <tr>
+                                <th>Username</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Absences</th>
+                                <th>Lates</th>
+                                <th>Excuses</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="LateReport" class="vtabcontent">
+                    <div class="tablewrapper">
+                        <table id="latetbl">
+                            <tr>
+                                <th>Username</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Lates</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="ExcuseReport" class="vtabcontent">
+                    <div class="tablewrapper">
+                        <table id="exctbl">
+                            <tr>
+                                <th>Username</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Excuses</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="EmployeeBrief" class="vtabcontent">
+                    <div id="choose">
+                        <h4>Username: </h4>
+                        <select name="eid" id="eid" title="eid">
+                            <option value="" selected disabled hidden></option>
+                        </select>
+                    </div>
+                    <div class="tablewrapper">
+                        <table class="sml">
+                            <tr>
+                                <th>First Name:</th>
+                                <td id="efname"></td>
+                            </tr>
+                            <tr>
+                                <th>Last Name:</th>
+                                <td id="elname"></td>
+                            </tr>
+                            <tr>
+                                <th>Points:</th>
+                                <td id="epoints"></td>
+                            </tr>
+                            <tr>
+                                <th>Total Points:</th>
+                                <td id="total"></td>
+                            </tr>
+                            <tr>
+                                <th>Percentage:</th>
+                                <td id="percent"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="RegisterSecurity" class="htabcontent center Register">
+        </div>
+
+        <div id="Settings" class="htabcontent">
+            <div class="tablewrapper">
+                <table class="sml">
+                    <tr>
+                        <th>Work Hours Start:</th>
+                        <td colspan="2"><input class="set" id="intime" type="time" value="08:30" /></td>
+                    </tr>
+                    <tr>
+                        <th>Work Hours End:</th>
+                        <td colspan="2"><input class="set" id="outtime" type="time" value="15:30" /></td>
+                    </tr>
+                    <tr>
+                        <th>Weekend:</th>
+                        <td colspan="2">
+                            <select class="set" id="weekend" name="weekend" title="weekend" multiple>
+                                <option value="Saturday">Saturday</option>
+                                <option value="Sunday">Sunday</option>
+                                <option value="Monday">Monday</option>
+                                <option value="Tuesday">Tuesday</option>
+                                <option value="Wednesday">Wednesday</option>
+                                <option value="Thursday">Thursday</option>
+                                <option value="Friday" selected>Friday</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Total Evaluation Points:</th>
+                        <td colspan="2"><input id="totalpoints" class="set" type="number" min="1" value="300" /> Points
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>For Absence:</th>
+                        <td colspan="2">Minus: <input id="abspoint" class="set" type="number" min="1" value="10" />
+                            Points</td>
+                    </tr>
+                    <tr>
+                        <th>For Late:</th>
+                        <td>Each <input id="latemins" class="set" type="number" min="1" value="15" /> Minutes</td>
+                        <td>Minus: <input id="latepoint" class="set" type="number" min="1" value="1" /> Points</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <h3>©<i>Attend.</i> 2022</h3>
+    </footer>
+</body>
+
+</html>

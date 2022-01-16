@@ -1,0 +1,41 @@
+body {
+    min-width: 200px;
+}
+
+#vtwrapper {
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.vtab {
+    width: 100%;
+    height: 45px;
+}
+
+.vtab,
+.htab {
+    box-sizing: border-box;
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+}
+
+.vtabcontent {
+    width: 100%;
+    max-width: 100%;
+    border-left: 1px solid #ccc;
+}
+
+.dropdown{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#notdrop{
+    display: none;
+}
+
+.sml{
+    width: 100%;
+    align-self: auto;
+}

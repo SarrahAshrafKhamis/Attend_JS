@@ -1,0 +1,27 @@
+<script src="Script/Register.js" type="module"></script>
+<div class="container" id="regform">
+    <h4 class="data">First Name </h4>
+    <input class="in" type="text" id="fname" placeholder="ex: Ahmad" />
+    <span id="fnameerror">Enter valid first name</span>
+    <h4 class="data">Last Name </h4>
+    <input class="in" type="text" id="lname" placeholder="ex: Khamis" />
+    <span id="lnameerror">Enter valid last name</span>
+    <h4 class="data">Address </h4>
+    <input class="in" type="text" id="address" placeholder="ex: Tanta" />
+    <span id="addresserror">Enter valid address</span>
+    <h4 class="data">Email </h4>
+    <input class="in" type="email" id="email" placeholder="ex: a@gms.co" />
+    <span id="emailerror">Enter valid email</span>
+    <h4 class="data">Age </h4>
+    <input class="in" type="number" id="age" min="20" max="65" placeholder="20:65" />
+    <span id="ageerror">Enter valid age</span>
+
+    <div id="redirect">
+        <p>Already signed up? <a href="#" id="loginredirect">Login</a></p>
+    </div>
+
+    <div class="clearfix">
+        <button id="cancelreg" type="button" class="cancelbtn">Cancel</button>
+        <button id="register" type="submit" class="okbtn">Register</button>
+    </div>
+</div>

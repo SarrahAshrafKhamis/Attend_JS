@@ -1,0 +1,133 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container input:not(input[type='button']) {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    flex-direction: column;
+    border: none;
+    background: inherit;
+    border-bottom: 2px solid #e15a51;
+    border-radius: 25px;
+    height: 40px;
+}
+
+span{
+    text-align: center;
+    color: red;
+    display: none;
+    margin-bottom: 5px;
+}
+
+.container input:not(input[type='button']):focus {
+    background-color: #ebeadb;
+    outline: none;
+}
+
+.container a{
+    color:dodgerblue;
+}
+
+.clearfix button {
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.clearfix button:hover {
+    opacity: 1;
+}
+
+.okbtn{
+    background-color: #04AA6D;
+}
+.cancelbtn {
+    padding: 14px 20px;
+    background-color: #f44336;
+}
+
+#RegisterSecurity{
+    overflow: hidden;
+}
+
+#redirect{
+    font-size: 14px;
+}
+
+.cancelbtn,
+.okbtn {
+    float: left;
+    width: 50%;
+    border-radius: 25px;
+}
+
+.clearfix{
+    box-sizing: border-box;
+    min-width: 160px;
+}
+.container {
+    box-sizing: border-box;
+    padding: 16px;
+    border-radius: 25px;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    width: 40%;
+    min-width: 190px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
+}
+
+form {
+    border-radius: 25px;
+}
+
+/* Clear floats */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media all and (max-width: 850px) {
+    .container{
+        width: 60%;
+    }
+}
+
+@media all and (max-width: 600px) {
+    .container{
+        width: 70%;
+    }
+}
+
+@media all and (max-width: 450px) {
+    .container{
+        width: 80%;
+    }
+}
+
+@media all and (max-width: 350px) {
+    .cancelbtn,
+    .okbtn {
+        width: 100%;
+    }
+    .container{
+        width: 90%;
+    }
+    .container input:not(input[type='button']) {
+        margin: 5px 0 5px 0;
+        height: 30px;
+    }
+    .clearfix button {
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
